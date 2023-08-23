@@ -12,3 +12,6 @@ For database, used JSON server.
 To run JSON server:-
 1) Open integrated Termial with Database folder 
 2) Use Command "npx json-server --watch db.json"
+
+If you want to hoist JSON server in different port then
+Use this command "npx json-server --watch db.json --port 4000"
