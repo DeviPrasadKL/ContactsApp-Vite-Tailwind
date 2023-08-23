@@ -1,0 +1,24 @@
+{
+    "Contacts":[
+        {
+            "FirstName": "Devi",
+            "LastName": "Prasad",
+            "Status": "Active"
+        },
+        {
+            "FirstName": "John",
+            "LastName": "Prasad",
+            "Status": "Inactive"
+        },
+        {
+            "FirstName": "Alex",
+            "LastName": "Prasad",
+            "Status": "Inactive"
+        },
+        {
+            "FirstName": "William",
+            "LastName": "clark",
+            "Status": "Active"
+        }
+    ]
+}
