@@ -4,6 +4,7 @@ import './App.css'
 import Contacts from './Components/Contacts'
 import Maps from './Components/Maps.jsx'
 import CreateContacts from './Components/CreateContacts.jsx'
+import EditContact from './Components/EditContact.jsx'
 
 function App() {
 
@@ -12,9 +13,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path='/' element={<Maps />} />
           <Route exact path='/contacts' element={<Contacts />} />
           <Route exact path='/add-contacts' element={<CreateContacts />} />
-          <Route path='/' element={<Maps />} />
+          <Route exact path='/edit-contacts/:id' element={<EditContact />} />
         </Routes>
       </BrowserRouter>
     </div>
