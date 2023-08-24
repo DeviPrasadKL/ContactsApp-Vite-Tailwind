@@ -6,6 +6,7 @@ export default function Contacts() {
   let [contacts, setContacts] = useState([]);
   let [pending, setpending] = useState(true);
   let [error, seterror] = useState(null);
+  
   useEffect(() => {
     fetch("http://localhost:4000/Contacts")
       .then((res) => {
