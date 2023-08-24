@@ -5,13 +5,32 @@ export default function CreateContacts() {
     const [userData, setUserData] = useState({
         FirstName: "",
         LastName: "",
-        Status: ""
+        Status: "",
+        id: ""
     });
+    const [contacts, setContacts] = useState([]);
 
     const handleInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
+        setUserData({...userData, [name]: value});
         console.log(name + " - " + value);
+        console.log(JSON.stringify(userData) + " setUserData");
+    }
+
+    const addContact = (e)=>{
+        e.preventDefault();
+        let newContact = {...userData, id:new Date().getTime().toString()};
+        setContacts([...contacts, newContact]);
+        fetch("http://localhost:4000/add-contacts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(contacts)
+          })
+            .then(() => {
+              alert("Contact added succesfully")
+              
+            })
     }
 
     return (
@@ -40,7 +59,9 @@ export default function CreateContacts() {
                     </form>
                 </div>
             </div>
-            <div>3</div>
+            <div>
+                <button type="submit" className=''>Save</button>
+            </div>
         </div>
     );
 }
