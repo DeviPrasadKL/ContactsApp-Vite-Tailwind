@@ -9,14 +9,14 @@ import EditContact from './Components/EditContact.jsx'
 function App() {
 
   return (
-    <div className=' bg-slate-100 flex max-sm:block'>
+    <div className=' bg-slate-100 flex max-sm:block h-full'>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Maps />} />
-          <Route exact path='/contacts' element={<Contacts />} />
-          <Route exact path='/add-contacts' element={<CreateContacts />} />
-          <Route exact path='/edit-contacts/:id' element={<EditContact />} />
+          <Route exact path='/' element={<Maps />} />
+          <Route path='/contacts' element={<Contacts />} />
+          <Route path='/add-contacts' element={<CreateContacts />} />
+          <Route path='/edit-contacts/:id' element={<EditContact />} />
         </Routes>
       </BrowserRouter>
     </div>

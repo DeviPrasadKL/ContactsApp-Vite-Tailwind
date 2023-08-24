@@ -32,7 +32,7 @@ export default function CreateContacts() {
         <div className='flex flex-col items-center justify-center w-full h-screen'>
             <div className='bg-white shadow-gray-300 shadow-lg w-80 h-54 p-8 rounded-xl'>
                 <div className='flex items-center justify-center'>
-                    <h3 className='mb-6'>Edit Contact</h3>
+                    <h3 className='mb-6'>Save Contact</h3>
                 </div>
                 <div className='grid grid-cols-1'>
                     <form>
