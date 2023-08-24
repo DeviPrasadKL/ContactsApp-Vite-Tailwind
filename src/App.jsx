@@ -9,7 +9,7 @@ import EditContact from './Components/EditContact.jsx'
 function App() {
 
   return (
-    <div className=' max-sm:block mainContainer'>
+    <div className=' bg-slate-100 flex max-sm:block '>
       <BrowserRouter>
         <Navbar />
         <Routes>

@@ -19,12 +19,6 @@
       "Status": "Inactive"
     },
     {
-      "id": "4",
-      "FirstName": "William",
-      "LastName": "clark",
-      "Status": "Active"
-    },
-    {
       "id": "1692857107708",
       "FirstName": "Devi Prasad",
       "LastName": "K L",
@@ -37,10 +31,10 @@
       "Status": "Inactive"
     },
     {
-      "id": "1692863461009",
-      "FirstName": "Devi scascasc",
-      "LastName": "zx",
-      "Status": "Inactive"
+      "id": "1692864380297",
+      "FirstName": "Devi Prasad",
+      "LastName": "K L",
+      "Status": "Active"
     }
   ]
 }

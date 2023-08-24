@@ -36,7 +36,7 @@ export default function Contacts() {
   };
 
   return (
-    <div className='h-screen'>
+    <div className=''>
       {error && <h1>{error}</h1>}
       <div className='flex items-center justify-center m-8 '>
         <NavLink to="/add-contacts">

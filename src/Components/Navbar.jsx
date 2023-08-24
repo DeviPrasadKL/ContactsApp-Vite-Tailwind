@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <div className='h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%'>
+    <div className=' bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%'>
       <div className=' text-white w-80 flex flex-col max-sm:hidden items-center pt-12 '>
         <NavLink to="/contacts">
           <h3 className='mb-16 text-4xl max-sm:text-sm shadow-sm hover:text-yellow-300' >Contacts</h3>
