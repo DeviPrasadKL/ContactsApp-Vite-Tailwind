@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { json, useParams } from 'react-router-dom';
+import { json, useNavigate, useParams } from 'react-router-dom';
 
 export default function EditContact() {
 
@@ -12,6 +12,8 @@ export default function EditContact() {
         Status: ""
     });
     let [error, seterror] = useState(null);
+    const navigate = useNavigate();
+
     useEffect(() => {
         fetch("http://localhost:4000/Contacts/" + id)
             .then((res) => {
@@ -20,7 +22,7 @@ export default function EditContact() {
                 }
                 return res.json();
             })
-            .then((data) => { setContact(data); console.log(data); data.Status == "Active"? (document.getElementById('radio1').checked = true) : (document.getElementById('radio2').checked = true);})
+            .then((data) => { setContact(data); data.Status == "Active"? (document.getElementById('radio1').checked = true) : (document.getElementById('radio2').checked = true);})
             .catch((err) => { seterror(err.message) });
             
     }, []);
@@ -29,6 +31,19 @@ export default function EditContact() {
     const handleInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
+        setContact({ ...contact, [name]: value });
+    }
+
+    const addEditedContact = (e) => {
+        e.preventDefault();
+        fetch("http://localhost:4000/Contacts/" + id, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(contact)
+        }).then(() => {
+            alert("Contact Edited succesfully");
+            navigate("/contacts");
+        })
     }
 
     return (
@@ -52,15 +67,15 @@ export default function EditContact() {
                             <div className='flex items-center justify-center'>
                                 <h2 className='font-bold' >Status:&ensp; </h2>
                                 <div className='grid grid-cols-2' >
-                                    <input type="radio" name="Status" id="radio1" className='mb-2 ' value={contact.Status} onChange={handleInput} /><h2>Active</h2>
-                                    <input type="radio" name="Status" id="radio2" className='mt-2 ' value={contact.Status} onChange={handleInput} /><h2>Inactive</h2>
+                                    <input type="radio" name="Status" id="radio1" className='mb-2 ' value="Active" onChange={handleInput} /><h2>Active</h2>
+                                    <input type="radio" name="Status" id="radio2" className='mt-2 ' value="Inactive" onChange={handleInput} /><h2>Inactive</h2>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div>
-                    <button type="submit" className=' rounded-xl shadow-md p-3 pl-10 pr-10 hover:text-black hover:bg-white bg-green-200 mt-4 font-sans font-bold'>Save</button>
+                <div className='flex items-center justify-center' >
+                    <button type="submit" className=' rounded-xl shadow-md p-3 pl-10 pr-10 hover:text-black hover:bg-white bg-green-200 mt-4 font-sans font-bold' onClick={addEditedContact} >Save</button>
                 </div>
             </div>
         </div>

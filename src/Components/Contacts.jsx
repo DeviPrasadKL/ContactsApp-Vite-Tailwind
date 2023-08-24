@@ -8,6 +8,10 @@ export default function Contacts() {
   let [error, seterror] = useState(null);
 
   useEffect(() => {
+    fetchContacts();
+  }, []);
+
+  const fetchContacts = () => {
     fetch("http://localhost:4000/Contacts")
       .then((res) => {
         if (res.ok === false) {
@@ -17,18 +21,30 @@ export default function Contacts() {
       })
       .then((data) => { setContacts(data); setpending(false); console.log(data); })
       .catch((err) => { seterror(err.message); setpending(false) })
-  }, []);
+  }
+
+  let deleteContact = (id) => {
+    fetch("http://localhost:4000/Contacts/" + id, { method: "DELETE" })
+      .then(() => {
+        let userChoice = confirm("Are you sure you want to delete this contact?");
+        if (userChoice) {
+          alert("Contact deleted successfully");
+          fetchContacts();
+        }
+      }
+      );
+  };
 
   return (
-    <div className=''>
+    <div className='h-screen'>
       {error && <h1>{error}</h1>}
-      <div className='flex items-center justify-center m-8'>
+      <div className='flex items-center justify-center m-8 '>
         <NavLink to="/add-contacts">
           <button className='border-2 rounded-xl border-black pl-6 pr-6 pt-2 pb-2 mb-4 font-sans font-bold text-white bg-gray-400 hover:text-black hover:bg-slate-200'>Create Contact</button>
         </NavLink>
       </div>
 
-      {!pending && <div className='flex flex-wrap items-center justify-center'>
+      <div className='flex flex-wrap items-center justify-center h-screen'>
         {contacts.map((contact) => {
           return (
             <div className='mb-6 flex justify-center flex-col items-center'>
@@ -41,12 +57,12 @@ export default function Contacts() {
                 <NavLink to={`/edit-contacts/${contact.id}`}>
                   <button className='rounded-xl w-full border-green-400 pl-6 pr-6 pt-2 pb-2 mb-4 font-sans font-bold text-white bg-gradient-to-r from-green-300 to-green-500 hover:from-green-500 hover:to-green-300 shadow-md '> Edit</button>
                 </NavLink>
-                <button className='rounded-xl border-red-400 pl-6 pr-6 pt-2 pb-2 font-sans font-bold text-white bg-gradient-to-r from-red-300 to-red-500 hover:from-red-500 hover:to-red-300 shadow-md '> Delete</button>
+                <button className='rounded-xl border-red-400 pl-6 pr-6 pt-2 pb-2 font-sans font-bold text-white bg-gradient-to-r from-red-300 to-red-500 hover:from-red-500 hover:to-red-300 shadow-md' onClick={() => { deleteContact(contact.id) }}> Delete</button>
               </div>
             </div>
           )
         })}
-      </div>}
+      </div>
     </div>
   );
 }

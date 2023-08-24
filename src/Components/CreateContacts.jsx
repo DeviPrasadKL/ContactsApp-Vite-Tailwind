@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateContacts() {
 
@@ -8,6 +9,7 @@ export default function CreateContacts() {
         LastName: "",
         Status: ""
     });
+    const navigate = useNavigate();
 
     const handleInput = (e) => {
         const name = e.target.name;
@@ -24,7 +26,7 @@ export default function CreateContacts() {
             body: JSON.stringify(newContact)
         }).then(() => {
             alert("Contact added succesfully");
-            console.log(JSON.stringify(newContact));
+            navigate("/contacts");
         })
     }
 
