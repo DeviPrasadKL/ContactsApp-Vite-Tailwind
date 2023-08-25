@@ -1,24 +1,6 @@
 {
   "Contacts": [
     {
-      "id": "1",
-      "FirstName": "Devi ",
-      "LastName": "Prasad ",
-      "Status": "Inactive"
-    },
-    {
-      "id": "2",
-      "FirstName": "John",
-      "LastName": "Prasad",
-      "Status": "Inactive"
-    },
-    {
-      "id": "3",
-      "FirstName": "Alex",
-      "LastName": "Prasad",
-      "Status": "Inactive"
-    },
-    {
       "id": "1692857107708",
       "FirstName": "Devi Prasad",
       "LastName": "K L",
@@ -32,8 +14,26 @@
     },
     {
       "id": "1692864380297",
-      "FirstName": "Devi Prasad",
-      "LastName": "K L",
+      "FirstName": "Devi ",
+      "LastName": "Prasad",
+      "Status": "Inactive"
+    },
+    {
+      "id": "1692943280904",
+      "FirstName": "Sample 1",
+      "LastName": "Sample",
+      "Status": "Active"
+    },
+    {
+      "id": "1692943291432",
+      "FirstName": "Sample ",
+      "LastName": "2",
+      "Status": "Inactive"
+    },
+    {
+      "id": "1692943301376",
+      "FirstName": "Sample ",
+      "LastName": "3",
       "Status": "Active"
     }
   ]

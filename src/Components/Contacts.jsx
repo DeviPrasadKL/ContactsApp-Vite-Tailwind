@@ -47,7 +47,7 @@ export default function Contacts() {
       <div className='flex flex-wrap items-center justify-center h-screen'>
         {contacts.map((contact) => {
           return (
-            <div className='mb-6 flex justify-center flex-col items-center'>
+            <div className='flex justify-center flex-col items-center'>
               <div className='grid grid-cols-2 p-2 rounded-xl mr-4 mb-4 bg-white shadow-gray-300 shadow-lg'>
                 <h2 className='text-4xl font-sans'>FirstName:-&ensp;</h2><h2 className='text-3xl font-mono font-semibold' >{contact.FirstName}</h2>
                 <h2 className='text-4xl font-sans'>LastName:-&ensp;</h2><h2 className='text-3xl font-mono font-semibold' >{contact.LastName}</h2>
