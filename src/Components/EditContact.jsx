@@ -42,7 +42,7 @@ export default function EditContact() {
             body: JSON.stringify(contact)
         }).then(() => {
             alert("Contact Edited succesfully");
-            navigate("/contacts");
+            navigate("/ContactsApp-Vite-Tailwind");
         })
     }
 

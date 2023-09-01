@@ -26,7 +26,7 @@ export default function CreateContacts() {
             body: JSON.stringify(newContact)
         }).then(() => {
             alert("Contact added succesfully");
-            navigate("/contacts");
+            navigate("/ContactsApp-Vite-Tailwind");
         })
     }
 

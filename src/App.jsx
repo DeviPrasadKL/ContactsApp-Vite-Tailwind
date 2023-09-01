@@ -14,7 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Maps />} />
-          <Route path='/contacts' element={<Contacts />} />
+          <Route path='/ContactsApp-Vite-Tailwind' element={<Contacts />} />
           <Route path='/add-contacts' element={<CreateContacts />} />
           <Route path='/edit-contacts/:id' element={<EditContact />} />
         </Routes>
