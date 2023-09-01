@@ -12,14 +12,14 @@ export default function Contacts() {
   }, []);
 
   const fetchContacts = () => {
-    fetch("http://localhost:4000/Contacts")
+    fetch("https://deviprasadkl.github.io/ContactsApi/ContactsDB.json")
       .then((res) => {
         if (res.ok === false) {
           throw Error("Searching data not found in this API")
         }
         return res.json();
       })
-      .then((data) => { setContacts(data); setpending(false); console.log(data); })
+      .then((data) => { setContacts(data.Contacts); setpending(false); console.log(data.Contacts); })
       .catch((err) => { seterror(err.message); setpending(false) })
   }
 
