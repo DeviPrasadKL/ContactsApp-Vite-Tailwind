@@ -9,12 +9,12 @@ import EditContact from './Components/EditContact.jsx'
 function App() {
 
   return (
-    <div className=' bg-slate-100 flex max-sm:block '>
+    <div className='flex  bg-slate-100 max-sm:block'>
       <BrowserRouter>
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Maps />} />
-          <Route path='/ContactsApp-Vite-Tailwind' element={<Contacts />} />
+          <Route path='/ContactsApp-Vite-Tailwind/' element={<Contacts />} />
           <Route path='/add-contacts' element={<CreateContacts />} />
           <Route path='/edit-contacts/:id' element={<EditContact />} />
         </Routes>
